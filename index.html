@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine's Day</title>
+    <style>
+        @font-face {
+            font-family: 'Cheri';
+            src: url('CHERI___.TTF') format('truetype');
+        }
+
+        body {
+            font-family: 'Cheri', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #button-container {
+            text-align: center;
+        }
+
+        #yes-button, #no-button {
+            background-color: rgb(29, 216, 29);
+            color: white;
+            border-radius: 12px;
+        }
+
+        #no-button {
+            background-color: rgb(255, 71, 71);
+        }
+
+        #gif-message {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="question">Will you be my valentine?</h1>
+    <div id="button-container">
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+    </div>
+
+    <div id="gif-message">
+        <img src="kisses.gif" alt="Kisses gif">
+        <p>Yippeeeee!</p>
+    </div>
+
+    <script>
+document.getElementById('yes-button').addEventListener('click', function() {
+    document.getElementById('gif-message').style.display = 'block';
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('button-container').style.display = 'none';
+});
+
+var fontSize = 16; // Initial font size
+document.getElementById('no-button').addEventListener('click', function() {
+    fontSize += 2; // Increase font size
+    document.getElementById('yes-button').style.fontSize = fontSize + 'px';
+});
+    </script>
+</body>
+</html>
